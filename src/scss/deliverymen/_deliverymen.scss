@@ -1,0 +1,36 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.deliverymen {
+	background-color: v.$white;
+	padding: v.$separation 0;
+
+	&__heading {
+		text-align: center;
+		color: v.$secondary;
+	}
+
+	&__grid {
+		@include m.tablet {
+			@include m.grid(2, 2rem);
+			align-items: center;
+			column-gap: 3rem;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: flex-start;
+	}
+
+	&__text {
+		line-height: 1.5;
+		color: v.$secondary;
+	}
+
+	&__link {
+		@include m.button(v.$primary, v.$white);
+	}
+}

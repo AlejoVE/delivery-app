@@ -1,0 +1,61 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.download {
+	padding: v.$separation 0;
+	background-color: v.$light_gray;
+	&__grid {
+		display: flex;
+		flex-direction: column-reverse;
+		@include m.tablet {
+			align-items: center;
+			@include m.grid(2, 4rem);
+		}
+	}
+
+	&__image {
+		max-width: 50%;
+		margin: 5rem auto 0 auto;
+		transition-property: transform;
+		transition-duration: 0.3s;
+
+		@include m.tablet {
+			margin-top: 0;
+		}
+
+		&:hover {
+			transform: rotate(-4deg) scale(1.1);
+		}
+	}
+}
+
+.stores {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	&__heading,
+	&__text {
+		text-align: center;
+	}
+
+	&__heading {
+		color: v.$secondary;
+		margin: 2rem 0 0 0;
+	}
+
+	&__text {
+		margin-bottom: 3rem;
+	}
+
+	&__grid {
+		@include m.grid(2, 2rem);
+	}
+
+	&__link {
+		transition-property: transform;
+		transition-duration: 0.3s;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
